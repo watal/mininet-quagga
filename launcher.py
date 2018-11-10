@@ -13,7 +13,8 @@ def print_frame(stdscr, max_x):
     '''print window-frame'''
 
     stdscr.box()
-    stdscr.addstr(1, 1, 'Command: z -> zebra, r -> ripd, o -> ospfd, b -> bgpd, k -> UP, j -> DOWN, q -> QUIT', curses.A_NORMAL)
+    stdscr.addstr(
+        1, 1, 'Command: z -> zebra, r -> ripd, o -> ospfd, b -> bgpd, k -> UP, j -> DOWN, q -> QUIT', curses.A_NORMAL)
     stdscr.addstr(2, 1, 'Please select the node.', curses.A_NORMAL)
     stdscr.hline(3, 1, curses.ACS_HLINE, max_x - 2)
     stdscr.refresh()      # 画面更新
@@ -80,7 +81,7 @@ def launcher(stdscr):
     swin_size.max_x = mwin_max_x
 
     # 現在位置を示すポインタ
-    x, y = swin_size.min_x , swin_size.min_y
+    x, y = swin_size.min_x, swin_size.min_y
 
     # 枠線の描画
     print_frame(stdscr, mwin_max_x)
